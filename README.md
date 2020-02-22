@@ -1,0 +1,1 @@
+Going through course from https://github.com/klamping/webdriverio-course-content. Thanks to Kevin.
