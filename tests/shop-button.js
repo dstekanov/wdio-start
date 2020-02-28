@@ -1,5 +1,3 @@
-const expect = require('chai').expect;
-
 describe('Shop CTA button', () => {
     it('should link to the product page', () => {
         browser.url('./')
