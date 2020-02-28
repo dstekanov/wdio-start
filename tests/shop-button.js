@@ -1,15 +1,14 @@
-const assert = require('chai').assert
+const expect = require('chai').expect;
 
 describe('Shop CTA button', () => {
     it('should link to the product page', () => {
         browser.url('./')
 
-        assert.equal(browser.getTitle(), 'Robot Parts Emporium')
+        expect(browser.getTitle()).to.equal('Robot Parts Emporium')
 
         $('.fancy.button').click()
     
-        assert.equal(browser.getTitle(), 'Totally Not Evil Sentient Robot - Robot Parts Emporium')
-
-        assert.include(browser.getUrl(), "product-page.html", "URL mismatch");
+        expect(browser.getTitle()).to.equal('Totally Not Evil Sentient Robot - Robot Parts Emporium')
+        expect(browser.getUrl()).to.include('product-page.html', 'URL mismatch');
     })
 })
