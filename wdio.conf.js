@@ -4,6 +4,8 @@ if (process.env.SERVER == 'prod') {
     baseURL = 'http://kevinlamping.com/webdriverio-course-content/';
 }
 
+var timeout = process.env.DEBUG ? 999999999 : 10000;
+
 exports.config = {
     //
     // ====================
@@ -138,7 +140,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 999999999
+        timeout: timeout
     },
     //
     // =====
