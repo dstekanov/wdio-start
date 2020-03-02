@@ -5,6 +5,7 @@ describe('Shop CTA button', () => {
         expect(browser.getTitle()).to.equal('Robot Parts Emporium')
 
         $('.fancy.button').click()
+        browser.debug();
     
         expect(browser.getTitle()).to.equal('Totally Not Evil Sentient Robot - Robot Parts Emporium')
         expect(browser.getUrl()).to.include('product-page.html', 'URL mismatch');

@@ -1,5 +1,3 @@
-console.log('Hi from config!');
-
 var baseURL = 'http://localhost:8303/';
 
 if (process.env.SERVER == 'prod') {
