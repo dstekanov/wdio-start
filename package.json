@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio"
+    "test": "wdio",
+    "test:watch": "onchange \"tests/*.js\" -- wdio"
   },
   "keywords": [],
   "author": "Dmytro Stekanov",
@@ -19,6 +20,8 @@
     "@wdio/sync": "^5.18.7",
     "chai": "^4.2.0",
     "chromedriver": "^80.0.1",
+    "node-notifier": "^6.0.0",
+    "onchange": "^6.1.0",
     "wdio-chromedriver-service": "^5.0.2"
   }
 }
