@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio",
-    "test:watch": "onchange \"tests/*.js\" -- wdio"
+    "test:watch": "onchange \"tests/**/*.js\" -- wdio"
   },
   "keywords": [],
   "author": "Dmytro Stekanov",
