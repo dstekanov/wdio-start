@@ -1,14 +1,7 @@
+// import cart from '../pages/cart.page'
+var cart = require('../pages/cart.page')
+
 describe('Cart Functionality', () => {
-    var btn = "#buyNowButton";
-    var qty = "#qty";
-    var thankYou = ".callout*=Thank you human";
-
-    var cart = {
-        get btn() { return $(btn); },
-        get qty() { return $(qty); },
-        get thankYou() { return $(thankYou); }
-    }
-
     beforeEach(() => {
         browser.url('/product-page.html');
     })
