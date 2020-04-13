@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio",
+    "test": "wdio wdio.conf.js",
     "test:watch": "onchange \"tests/**/*.js\" -- wdio"
   },
   "keywords": [],

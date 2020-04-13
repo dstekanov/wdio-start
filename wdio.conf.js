@@ -1,10 +1,6 @@
 var notifier = require('node-notifier');
 
-var baseURL = 'http://localhost:8303/';
-
-if (process.env.SERVER == 'prod') {
-    baseURL = 'http://kevinlamping.com/webdriverio-course-content/';
-}
+var baseURL = 'http://kevinlamping.com/webdriverio-course-content/';
 
 var timeout = process.env.DEBUG ? 999999999 : 10000;
 
@@ -59,9 +55,9 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [{
-        'goog:chromeOptions': {
-            args: ['--headless', '--disable-gpu'],
-            },
+        // 'goog:chromeOptions': {
+        //     args: ['--headless', '--disable-gpu'],
+        //     },
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
@@ -99,9 +95,9 @@ exports.config = {
     // If you only want to run your tests until a specific amount of tests have failed use
     // bail (default is 0 - don't bail, run all tests).
     bail: 0,
-    
-	screenshotPath: './screenshots/',
-	
+
+    screenshotPath: './screenshots/',
+
     // Set a base URL in order to shorten url command calls. If your `url` parameter starts
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
@@ -123,7 +119,7 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: ['chromedriver'],
-    
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks.html
@@ -139,7 +135,7 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
     reporters: ['spec'],
- 
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -217,7 +213,7 @@ exports.config = {
     /**
      * Function to be executed after a test (in Mocha/Jasmine).
      */
-    afterTest: function(test, context, { error, result, duration, passed, retries }) {
+    afterTest: function (test, context, {error, result, duration, passed, retries}) {
         if (!test.passed) {
             notifier.notify({
                 title: 'Test failed!',
@@ -266,17 +262,17 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    onComplete: function(exitCode, config, capabilities, results) {
+    onComplete: function (exitCode, config, capabilities, results) {
         notifier.notify({
             title: 'WebdriverIO',
             message: "Test finished running."
         })
     },
     /**
-    * Gets executed when a refresh happens.
-    * @param {String} oldSessionId session ID of the old session
-    * @param {String} newSessionId session ID of the new session
-    */
+     * Gets executed when a refresh happens.
+     * @param {String} oldSessionId session ID of the old session
+     * @param {String} newSessionId session ID of the new session
+     */
     //onReload: function(oldSessionId, newSessionId) {
     //}
 }
