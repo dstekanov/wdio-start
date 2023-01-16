@@ -1,7 +1,7 @@
 // import cart from '../pages/cart.page'
 var cart = require('../pages/cart.page')
 
-describe('Cart Functionality', () => {
+describe('Cart', () => {
     beforeEach(() => {
         browser.url('./product-page.html');
     });
